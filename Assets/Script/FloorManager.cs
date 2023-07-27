@@ -18,9 +18,11 @@ public class FloorManager : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+   public void RepositionFloor(GameObject floor)
     {
-        collision.gameObject.SetActive(false);  
+        int x = Random.Range(-30, 30);
+        floor.transform.position = new Vector3(x, y, 0);
+        y = y - 5;
     }
 }
 
