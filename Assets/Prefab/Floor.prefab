@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3021931952373126790}
   - component: {fileID: 3021931952373126784}
   - component: {fileID: 3021931952373126787}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,9 +142,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3021931954245449070}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 3021931954271439723}
   - component: {fileID: 3021931954271439733}
   - component: {fileID: 3021931954271439732}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
