@@ -10,9 +10,13 @@ public class FloorRepositioning : MonoBehaviour
          floorManager = FindAnyObjectByType<FloorManager>();
 
     }
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(other.tag == "Floor")
+        Debug.Log("Floorr collide");
+        if(collision.gameObject.tag=="Floor")
+        {
             floorManager.RepositionFloor(this.gameObject);
+            Debug.Log("Floor RERppossitioning");
+        }
     }
 }
