@@ -14,7 +14,7 @@ public class FloorManager : MonoBehaviour
             GameObject floor = Instantiate(floorPrefab);
             int x = Random.Range(-30, 30);
             floor.transform.position = new Vector3(x, y, 0);
-            y = y - 5;
+            y = y - 6;
         }
     }
 
@@ -22,7 +22,7 @@ public class FloorManager : MonoBehaviour
     {
         int x = Random.Range(-30, 30);
         floor.transform.position = new Vector3(x, y, 0);
-        y = y - 5;
+        y = y - 6;
     }
 }
 
