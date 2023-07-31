@@ -8,7 +8,10 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private float speed = 5f;
     private float jumpForce = 1500f;
+    private float bulletSpeed = 3000f;
 
+    [SerializeField] GameObject bulletprefab;
+    [SerializeField] GameObject gunPoint;
     public Sprite[] sprites;
     private int spriteIndex;
     private void Awake()
@@ -38,6 +41,12 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(Vector2.up * jumpForce);
             Debug.Log("Jump");
+        }
+        if(Input.GetMouseButtonDown(0))
+        {
+            GameObject bullet = Instantiate(bulletprefab, gunPoint.transform.position,gunPoint.transform.rotation);
+            bullet.GetComponent<Rigidbody2D>().velocity = (transform.forward * bulletSpeed);
+
         }
     }
 
