@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        AnimateSprite();
+        //AnimateSprite();
     }
 
    
@@ -25,12 +25,14 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.D)||Input.GetKey(KeyCode.RightArrow))
         {
             rb.AddForce(Vector2.right*speed);
-            AnimateSprite();
+            this.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+            //AnimateSprite();
         }
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             rb.AddForce(Vector2.left * speed);
-            AnimateSprite();
+            this.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180));
+            //AnimateSprite();
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
