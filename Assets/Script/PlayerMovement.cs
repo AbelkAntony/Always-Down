@@ -8,7 +8,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private float speed = 5f;
     private float jumpForce = 1500f;
-    private float bulletSpeed = 3000f;
+    private float bulletSpeed = 2500f;
+    private Vector2 bulletDirection = Vector2.right;
 
     [SerializeField] GameObject bulletprefab;
     [SerializeField] GameObject gunPoint;
@@ -29,12 +30,14 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(Vector2.right*speed);
             this.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+            bulletDirection = Vector2.right;
             //AnimateSprite();
         }
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             rb.AddForce(Vector2.left * speed);
             this.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180));
+            bulletDirection = Vector2.left;
             //AnimateSprite();
         }
         if (Input.GetKeyDown(KeyCode.Space))
@@ -45,7 +48,9 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetMouseButtonDown(0))
         {
             GameObject bullet = Instantiate(bulletprefab, gunPoint.transform.position,gunPoint.transform.rotation);
-            bullet.GetComponent<Rigidbody2D>().velocity = (transform.forward * bulletSpeed);
+            Debug.Log("bullet created");
+            bullet.GetComponent<Rigidbody2D>().AddForce(bulletDirection * bulletSpeed);
+            Debug.Log("velocity");
 
         }
     }
