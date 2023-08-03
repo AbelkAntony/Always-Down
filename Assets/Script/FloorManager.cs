@@ -5,6 +5,7 @@ using UnityEngine;
 public class FloorManager : MonoBehaviour
 {
     [SerializeField] GameObject floorPrefab;
+    [SerializeField] GameManager gameManager;
     private int y = 15;
 
     private void Awake()
@@ -22,6 +23,7 @@ public class FloorManager : MonoBehaviour
     {
         int x = Random.Range(-30, 30);
         floor.transform.position = new Vector3(x, y, 0);
+        gameManager.NewFloorPosition(x, y);
         y = y - 6;
     }
 }
