@@ -9,4 +9,13 @@ public class BulletDestroy : MonoBehaviour
         Destroy(this.gameObject);
         Debug.Log(collision.gameObject.name);
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag !="Floor")
+        {
+            Destroy(this.gameObject);
+            Debug.Log(collision.gameObject);
+        }
+        
+    }
 }
