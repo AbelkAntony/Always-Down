@@ -10,7 +10,14 @@ public class FloorManager : MonoBehaviour
 
     private void Awake()
     {
-        for(int i =0; i<10;i++)
+        GameObject floor = Instantiate(floorPrefab);
+        floor.transform.position = new Vector3(0, y, 0);
+        y = y - 6;
+    }
+
+    private void Start()
+    {
+        for (int i = 0; i < 10; i++)
         {
             GameObject floor = Instantiate(floorPrefab);
             int x = Random.Range(-30, 30);
@@ -20,7 +27,7 @@ public class FloorManager : MonoBehaviour
         }
     }
 
-   public void RepositionFloor(GameObject floor)
+    public void RepositionFloor(GameObject floor)
     {
         int x = Random.Range(-30, 30);
         floor.transform.position = new Vector3(x, y, 0);
