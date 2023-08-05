@@ -10,6 +10,6 @@ public class Ground : MonoBehaviour
     {
         enemyManager = FindObjectOfType<EnemyManager>();
         position = enemyManager.GetEnemySpawnPosition();
-        this.gameObject.transform.position = position;
+        //this.gameObject.transform.position = position;
     }
 }
