@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private float jumpForce = 1500f;
     private float bulletSpeed = 2500f;
     private Vector2 bulletDirection = Vector2.right;
+    private bool haveGun = false;
 
     [SerializeField] GameObject bulletprefab;
     [SerializeField] GameObject gunPoint;
@@ -45,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(Vector2.up * jumpForce);
             Debug.Log("Jump");
         }
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0)&& haveGun)
         {
             GameObject bullet = Instantiate(bulletprefab, gunPoint.transform.position,gunPoint.transform.rotation);
             Debug.Log("bullet created");

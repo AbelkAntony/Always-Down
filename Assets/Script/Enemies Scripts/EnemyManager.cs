@@ -12,7 +12,8 @@ public class EnemyManager : MonoBehaviour
 
     public void EnemySpawn(int x,int y)
     {
-        enemySpawnPosition = new Vector3(x, y + 2, 0);
+        XEnemyPosition = x;
+        YEnemyPosition = y;
         int randomNumber = Random.Range(1, 2);
         if(randomNumber ==1)
         {
@@ -22,7 +23,13 @@ public class EnemyManager : MonoBehaviour
 
     private void CreateEnemy()
     {
-        int enemyindex = Random.Range(0, 5);
-        GameObject Enemy = Instantiate(enemyPrefab[enemyindex],enemySpawnPosition,Quaternion.identity);
+        int enemyindex = Random.Range(0, 4);
+        GameObject Enemy = Instantiate(enemyPrefab[enemyindex]);
+    }
+    
+
+    public Vector2 GetEnemySpawnPosition()
+    {
+        return new Vector2(XEnemyPosition, YEnemyPosition);
     }
 }
