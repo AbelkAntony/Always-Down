@@ -15,7 +15,7 @@ public class EnemyManager : MonoBehaviour
     {
         XEnemyPosition = x;
         YEnemyPosition = y;
-        int randomNumber = Random.Range(1, 2);
+        int randomNumber = Random.Range(0, 2);
         if(randomNumber ==1)
         {
             CreateEnemy();
@@ -40,7 +40,7 @@ public class EnemyManager : MonoBehaviour
                 enemy = Instantiate(enemyPrefab[enemyindex], enemySpawnPosition, Quaternion.identity);
                 break;
             case 3:
-                enemySpawnPosition = new Vector3(XEnemyPosition + 3, YEnemyPosition + 3, 0);
+                enemySpawnPosition = new Vector3(XEnemyPosition +1, YEnemyPosition + 3, 0);
                 enemy = Instantiate(enemyPrefab[enemyindex], enemySpawnPosition, Quaternion.identity);
                 break;
 
