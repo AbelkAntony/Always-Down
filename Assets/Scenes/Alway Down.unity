@@ -216,10 +216,9 @@ MonoBehaviour:
   enemySpawner: {fileID: 0}
   enemyPrefab:
   - {fileID: 4359564182869255368, guid: 6e70c6117116f0543a0e207744df6feb, type: 3}
-  - {fileID: 4359564182869255368, guid: 6e70c6117116f0543a0e207744df6feb, type: 3}
-  - {fileID: 4359564182869255368, guid: 6e70c6117116f0543a0e207744df6feb, type: 3}
-  - {fileID: 4359564182869255368, guid: 6e70c6117116f0543a0e207744df6feb, type: 3}
-  - {fileID: 4359564182869255368, guid: 6e70c6117116f0543a0e207744df6feb, type: 3}
+  - {fileID: 5823138558487602635, guid: c3b85b512f21de6498e0482bb25f2cc5, type: 3}
+  - {fileID: 2281522879329993832, guid: cb321bc20c5e7fa4ab252b0dd0a4729b, type: 3}
+  - {fileID: 5694094842728634496, guid: 7e56dc53c89fd2c4f90bf985c0dbfb75, type: 3}
 --- !u!1 &248833568
 GameObject:
   m_ObjectHideFlags: 0
