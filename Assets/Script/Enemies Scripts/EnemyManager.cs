@@ -28,7 +28,7 @@ public class EnemyManager : MonoBehaviour
         switch(enemyindex)
         {
             case 0:
-                enemySpawnPosition = new Vector3(XEnemyPosition + 3, YEnemyPosition + 1, 0);
+                enemySpawnPosition = new Vector3(XEnemyPosition, YEnemyPosition + 1, 0);
                 enemy = Instantiate(enemyPrefab[enemyindex],enemySpawnPosition,Quaternion.identity);
                 break;
             case 1:

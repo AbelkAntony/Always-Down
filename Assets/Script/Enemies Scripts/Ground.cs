@@ -7,18 +7,41 @@ public class Ground : MonoBehaviour
     Vector2 position;
     private EnemyManager enemyManager;
     private float movementSpeed = 10;
-    private Vector3 direction = Vector3.right;
+    private Vector3 direction;
+    private int randomNumber;
     private void Awake()
     {
 
         enemyManager = FindObjectOfType<EnemyManager>();
         position = enemyManager.GetEnemySpawnPosition();
-        //this.gameObject.transform.position = position;
+        randomNumber = Random.Range(0, 2);
+        
+    }
+    private void Start()
+    {
+        if (randomNumber == 1)
+        {
+            this.gameObject.transform.position = new Vector3(position.x -3, position.y + 1, 0);
+            direction = Vector3.left;
+        }
+        else if(randomNumber==0)
+        {
+            this.gameObject.transform.position = new Vector3(position.x + 3, position.y + 1, 0);
+            direction = Vector3.right;
+        }
     }
     private void Update()
     {
-        if (gameObject.transform.position.x < position.x + 2.9)
-            direction = Vector3.right;
+        if(randomNumber == 1)
+        {
+            if (gameObject.transform.position.x > position.x - 2.9)
+                direction = Vector3.left;
+        }
+        if(randomNumber ==0)
+        {
+            if (gameObject.transform.position.x < position.x + 2.9)
+                direction = Vector3.right;
+        }
     }
     private void FixedUpdate()
     {
