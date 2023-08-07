@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     private float bulletSpeed = 2500f;
     private Vector2 bulletDirection = Vector2.right;
     private bool haveGun = false;
+    private int playerHealth;
+    private bool playerAlive;
 
     [SerializeField] GameObject bulletprefab;
     [SerializeField] GameObject gunPoint;
@@ -20,10 +22,21 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        ResetState();
+        
         //AnimateSprite();
     }
 
-   
+    public void takeDamage(int damage)
+    {
+        if(playerHealth>damage)
+            playerHealth -= damage;
+        else if(playerHealth<=damage )
+        {
+            playerHealth = 0;
+            playerAlive = false;
+        }
+    }
 
     private void Update()
     {
@@ -54,6 +67,11 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("velocity");
 
         }
+    }
+    private void ResetState()
+    {
+        playerHealth = 100;
+        playerAlive = true;
     }
 
     private void AnimateSprite()
