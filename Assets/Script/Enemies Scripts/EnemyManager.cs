@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    [SerializeField] GameObject enemySpawner;
+    //[SerializeField] GameObject enemySpawner;
     [SerializeField] GameObject[] enemyPrefab;
     private int XEnemyPosition;
     private int YEnemyPosition;
@@ -32,7 +32,7 @@ public class EnemyManager : MonoBehaviour
                 enemy = Instantiate(enemyPrefab[enemyindex],enemySpawnPosition,Quaternion.identity);
                 break;
             case 1:
-                enemySpawnPosition = new Vector3(XEnemyPosition, YEnemyPosition + 3, 0);
+                enemySpawnPosition = new Vector3(XEnemyPosition, YEnemyPosition - 3, 0);
                 enemy = Instantiate(enemyPrefab[enemyindex], enemySpawnPosition, Quaternion.identity);
                 break;
             case 2:
@@ -40,7 +40,7 @@ public class EnemyManager : MonoBehaviour
                 enemy = Instantiate(enemyPrefab[enemyindex], enemySpawnPosition, Quaternion.identity);
                 break;
             case 3:
-                enemySpawnPosition = new Vector3(XEnemyPosition +1, YEnemyPosition + 3, 0);
+                enemySpawnPosition = new Vector3(XEnemyPosition +1, YEnemyPosition + 1, 0);
                 enemy = Instantiate(enemyPrefab[enemyindex], enemySpawnPosition, Quaternion.identity);
                 break;
 

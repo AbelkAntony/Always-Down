@@ -38,6 +38,8 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public int  GetPlayerHealth()       {       return playerHealth;       }
+    public bool IsPlayerAlive()         {       return playerAlive;        }    
     private void Update()
     {
         if (Input.GetKey(KeyCode.D)||Input.GetKey(KeyCode.RightArrow))

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Ground : MonoBehaviour
 {
-    Vector2 position;
+    private Vector2 position;
     private EnemyManager enemyManager;
     private float movementSpeed = 10;
     private Vector3 direction;
