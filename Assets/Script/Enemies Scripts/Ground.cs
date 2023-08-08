@@ -9,6 +9,8 @@ public class Ground : MonoBehaviour
     private float movementSpeed = 10;
     private Vector3 direction;
     private int randomNumber;
+    private int damagePoint = 15;
+    private int life = 2;
     private void Awake()
     {
 
@@ -66,8 +68,26 @@ public class Ground : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.name=="Bullet")
+        {
+            TakeDamage();
+        }
+        else if(collision.name=="Player")
+        {
+            enemyManager.PlayerTakeDamage(damagePoint);
+        }
+    }
     public void TakeDamage()
     {
-
+        if (life <= 0)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            life--;
+        }
     }
 }
