@@ -10,7 +10,7 @@ public class Ground : MonoBehaviour
     private Vector3 direction;
     private int randomNumber;
     private int damagePoint = 15;
-    private int life = 2;
+    public int life = 2;
     private void Awake()
     {
 
@@ -70,6 +70,7 @@ public class Ground : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         if(collision.name=="Bullet")
         {
             TakeDamage();
@@ -77,6 +78,10 @@ public class Ground : MonoBehaviour
         else if(collision.name=="Player")
         {
             enemyManager.PlayerTakeDamage(damagePoint);
+        }
+        else if (collision.gameObject.tag == "Floor")
+        {
+            Destroy(this.gameObject);
         }
     }
     public void TakeDamage()

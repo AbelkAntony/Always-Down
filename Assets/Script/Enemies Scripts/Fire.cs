@@ -8,7 +8,7 @@ public class Fire : MonoBehaviour
     private GameObject fire;
     private bool fireStatus = true;
     private float fireTimeIntervel = 4;
-    private int life = 3;
+    public int life = 3;
     private int damagePoint = 10;
 
     private void Start()

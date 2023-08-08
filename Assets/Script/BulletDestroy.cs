@@ -10,7 +10,7 @@ public class BulletDestroy : MonoBehaviour
         Destroy(this.gameObject);
         Debug.Log(collision.gameObject.name);
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+   /* private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag !="Floor")
         {
@@ -18,5 +18,5 @@ public class BulletDestroy : MonoBehaviour
             Debug.Log(collision.gameObject);
         }
         
-    }
+    }*/
 }

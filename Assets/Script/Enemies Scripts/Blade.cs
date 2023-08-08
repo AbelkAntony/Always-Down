@@ -9,7 +9,7 @@ public class Blade : MonoBehaviour
     private float movementSpeed = 10;
     private Vector3 direction = Vector3.left;
     private int damagePoint = 20;
-    private int life = 5;
+    public int life = 5;
     private void Awake()
     {
 

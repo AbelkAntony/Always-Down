@@ -213,7 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7267ced3d9066640822d7d3415aadc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpawner: {fileID: 0}
+  gameManager: {fileID: 1272387487}
   enemyPrefab:
   - {fileID: 4359564182869255368, guid: 6e70c6117116f0543a0e207744df6feb, type: 3}
   - {fileID: 5823138558487602635, guid: c3b85b512f21de6498e0482bb25f2cc5, type: 3}
@@ -653,6 +653,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyManager: {fileID: 213257432}
+  player: {fileID: 953606776}
 --- !u!4 &1272387488
 Transform:
   m_ObjectHideFlags: 0
