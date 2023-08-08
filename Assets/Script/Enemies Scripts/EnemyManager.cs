@@ -8,6 +8,7 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] GameObject[] enemyPrefab;
     private int XEnemyPosition;
     private int YEnemyPosition;
+    private int xPosition;
     private Vector3 enemySpawnPosition;
     private GameObject enemy;
 
@@ -36,11 +37,13 @@ public class EnemyManager : MonoBehaviour
                 enemy = Instantiate(enemyPrefab[enemyindex], enemySpawnPosition, Quaternion.identity);
                 break;
             case 2:
-                enemySpawnPosition = new Vector3(XEnemyPosition + 3, YEnemyPosition + 1, 0);
+                xPosition = GetRandomPosition();
+                enemySpawnPosition = new Vector3(xPosition, YEnemyPosition + 1, 0);
                 enemy = Instantiate(enemyPrefab[enemyindex], enemySpawnPosition, Quaternion.identity);
                 break;
             case 3:
-                enemySpawnPosition = new Vector3(XEnemyPosition +1, YEnemyPosition + 1, 0);
+                xPosition = GetRandomPosition();
+                enemySpawnPosition = new Vector3(xPosition, YEnemyPosition + 1, 0);
                 enemy = Instantiate(enemyPrefab[enemyindex], enemySpawnPosition, Quaternion.identity);
                 break;
 
@@ -56,5 +59,20 @@ public class EnemyManager : MonoBehaviour
     public void PlayerTakeDamage(int damage)
     {
         gameManager.PlayerTakeDamage(damage);
+    }
+
+    private int GetRandomPosition()
+    {
+        int x = Random.Range(1, 3);
+        int xPosition = 0;
+        if (x == 1)
+        {
+            xPosition = Random.Range(-29, -3);
+        }
+        else if (x == 2)
+        {
+            xPosition = Random.Range(3, 29);
+        }
+        return xPosition;
     }
 }
