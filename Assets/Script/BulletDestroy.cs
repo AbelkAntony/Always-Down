@@ -5,12 +5,6 @@ using UnityEngine;
 public class BulletDestroy : MonoBehaviour
 {
 
-    private GameManager gameManager;
-
-    private void Start()
-    {
-        gameManager = FindAnyObjectByType<GameManager>();
-    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Destroy(this.gameObject);

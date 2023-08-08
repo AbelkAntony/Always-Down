@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    //[SerializeField] GameObject enemySpawner;
+    [SerializeField] GameManager gameManager;
     [SerializeField] GameObject[] enemyPrefab;
     private int XEnemyPosition;
     private int YEnemyPosition;
@@ -51,5 +51,10 @@ public class EnemyManager : MonoBehaviour
     public Vector2 GetEnemySpawnPosition()
     {
         return new Vector2(XEnemyPosition, YEnemyPosition);
+    }
+
+    public void PlayerTakeDamage(int damage)
+    {
+        gameManager.PlayerTakeDamage(damage);
     }
 }

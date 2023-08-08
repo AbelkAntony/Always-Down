@@ -65,4 +65,9 @@ public class Ground : MonoBehaviour
             //particles system to be done
         }
     }
+
+    public void TakeDamage()
+    {
+
+    }
 }

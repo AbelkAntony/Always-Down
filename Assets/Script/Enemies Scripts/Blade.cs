@@ -28,6 +28,9 @@ public class Blade : MonoBehaviour
         this.gameObject.transform.position += direction * movementSpeed * Time.deltaTime;
     }
 
+    public void TakeDamage()
+    {
 
+    }
 
 }
