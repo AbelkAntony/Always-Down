@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private float jumpForce = 1500f;
     private float bulletSpeed = 2500f;
     private Vector2 bulletDirection = Vector2.right;
-    private bool haveGun = false;
+    private bool haveGun = true;
     private int playerHealth;
     private bool playerAlive;
 
