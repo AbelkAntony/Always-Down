@@ -8,6 +8,8 @@ public class Blade : MonoBehaviour
     private EnemyManager enemyManager;
     private float movementSpeed = 10;
     private Vector3 direction = Vector3.left;
+    private int damagePoint = 20;
+    private int life = 5;
     private void Awake()
     {
 
@@ -28,9 +30,27 @@ public class Blade : MonoBehaviour
         this.gameObject.transform.position += direction * movementSpeed * Time.deltaTime;
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.name == "Bullet")
+        {
+            TakeDamage();
+        }
+        else if (collision.name == "Player")
+        {
+            enemyManager.PlayerTakeDamage(damagePoint);
+        }
+    }
     public void TakeDamage()
     {
-
+        if (life <= 0)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            life--;
+        }
     }
 
 }
