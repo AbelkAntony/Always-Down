@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,8 +16,8 @@ public class GameManager : MonoBehaviour
     {
         enemyManager = GameObject.FindAnyObjectByType<EnemyManager>();
         player = GameObject.FindAnyObjectByType<PlayerMovement>();
-        GameObject.FindGameObjectWithTag("Player").SetActive(false);
-        NewGame();
+        //GameObject.FindGameObjectWithTag("Player").SetActive(false);
+        //NewGame();
     }
     public void NewFloorPosition(int x,int y)
     {
@@ -32,7 +33,7 @@ public class GameManager : MonoBehaviour
 
     public void NewGame()
     {
-        player.gameObject.SetActive(true);
+        SceneManager.LoadScene(1);
     }
     
     public void AddScore()

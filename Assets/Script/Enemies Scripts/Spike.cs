@@ -14,7 +14,7 @@ public class Spike : MonoBehaviour
     {
         enemyManager = FindAnyObjectByType<EnemyManager>();
         enemyPosition = this.gameObject.transform.position;
-        InvokeRepeating(nameof(SpikeStatus),this.fireTimeIntervel,this.fireTimeIntervel);
+        InvokeRepeating(nameof(SpikeStatus),Time.deltaTime+1,this.fireTimeIntervel);
     }
 
     private void SpikeStatus()
