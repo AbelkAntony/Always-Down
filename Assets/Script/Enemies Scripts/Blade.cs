@@ -32,11 +32,11 @@ public class Blade : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.name == "Bullet")
+        if (collision.tag=="Bullet")
         {
             TakeDamage();
         }
-        else if (collision.name == "Player")
+        else if (collision.tag=="Player")
         {
             enemyManager.PlayerTakeDamage(damagePoint);
         }

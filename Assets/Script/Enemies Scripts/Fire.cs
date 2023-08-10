@@ -10,6 +10,7 @@ public class Fire : MonoBehaviour
     private float fireTimeIntervel = 4;
     public int life = 3;
     private int damagePoint = 10;
+    private bool died = false;
 
     private void Start()
     {
@@ -20,38 +21,39 @@ public class Fire : MonoBehaviour
 
     private void FireStatus()
     {
-        if(fireStatus)
+        if(!died)
         {
-            fire.SetActive(false);
-            fireStatus = false;
-        }
-        else
-        {
-            fire.SetActive(true);
-            fireStatus = true;
+            if(fireStatus)
+            {
+                fire.SetActive(false);
+                fireStatus = false;
+            }
+            else
+            {
+                fire.SetActive(true);
+                fireStatus = true;
+            }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.name=="Bullet")
+        if(collision.tag=="Bullet")
         {
             TakeDamage();
         }
-        else if(collision.name=="Player")
+        else if(collision.tag=="Player")
         {
             enemyManager.PlayerTakeDamage(damagePoint);
         }
     }
     public void TakeDamage()
     {
-        if(life<=0)
+        life--;
+        if (life<=0)
         {
+            CancelInvoke(nameof(FireStatus));
             Destroy(gameObject);
-        }
-        else 
-        {
-            life--;
         }
     }
 }

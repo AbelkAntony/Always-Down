@@ -8,28 +8,34 @@ public class Spike : MonoBehaviour
     private float fireTimeIntervel = 4;
     public int life = 3;
     private int damagePoint = 10;
+    private Vector3 enemyPosition;
 
     private void Start()
     {
         enemyManager = FindAnyObjectByType<EnemyManager>();
+        enemyPosition = this.gameObject.transform.position;
         InvokeRepeating(nameof(SpikeStatus),this.fireTimeIntervel,this.fireTimeIntervel);
     }
 
     private void SpikeStatus()
     {
-        float elapsed = 0f;
-        float duration = 0.1f;
+        //Debug.Log("spikestatus");
+        //float elapsed = 0f;
+        //float duration = 0.1f;
         Vector3 from = this.transform.position;
-        Vector3 to;
-        if(from.y==1)
+        //Vector3 to;
+        if(from.y==enemyPosition.y)
         {
-            to = new Vector3(this.transform.position.x,0,this.transform.position.z);
-            this.transform.position = Vector3.Lerp(from, to, elapsed / duration);
+           // Debug.Log("y--");
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y - 1, this.transform.position.z);
+            
         }
-        else if (from.y == 0)
+        else
         {
-            to = new Vector3(this.transform.position.x, 0, this.transform.position.z);
-            this.transform.position = Vector3.Lerp(from, to, elapsed / duration);
+           // Debug.Log("y++");
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 1, this.transform.position.z);
+            /*to = new Vector3(this.transform.position.x, this.transform.position.y + 1, this.transform.position.z);
+            this.transform.position = Vector3.Lerp(from, to, elapsed / duration);*/
         }
     }
 
