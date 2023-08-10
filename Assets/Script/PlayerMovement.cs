@@ -35,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
         {
             playerHealth = 0;
             playerAlive = false;
+            GameOver();
         }
     }
 
@@ -42,33 +43,37 @@ public class PlayerMovement : MonoBehaviour
     public bool IsPlayerAlive()         {       return playerAlive;        }    
     private void Update()
     {
-        if (Input.GetKey(KeyCode.D)||Input.GetKey(KeyCode.RightArrow))
+        if(playerAlive)
         {
-            rb.AddForce(Vector2.right*speed);
-            this.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-            bulletDirection = Vector2.right;
-            //AnimateSprite();
-        }
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-        {
-            rb.AddForce(Vector2.left * speed);
-            this.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180));
-            bulletDirection = Vector2.left;
-            //AnimateSprite();
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            rb.AddForce(Vector2.up * jumpForce);
-            Debug.Log("Jump");
-        }
-        if(Input.GetMouseButtonDown(0)&& haveGun)
-        {
-            GameObject bullet = Instantiate(bulletprefab, gunPoint.transform.position,gunPoint.transform.rotation);
-            Debug.Log("bullet created");
-            bullet.GetComponent<Rigidbody2D>().AddForce(bulletDirection * bulletSpeed);
-            Debug.Log("velocity");
+            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+            {
+                rb.AddForce(Vector2.right * speed);
+                this.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+                bulletDirection = Vector2.right;
+                //AnimateSprite();
+            }
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+            {
+                rb.AddForce(Vector2.left * speed);
+                this.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180));
+                bulletDirection = Vector2.left;
+                //AnimateSprite();
+            }
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                rb.AddForce(Vector2.up * jumpForce);
+                Debug.Log("Jump");
+            }
+            if (Input.GetKeyDown(KeyCode.LeftControl) && haveGun)
+            {
+                GameObject bullet = Instantiate(bulletprefab, gunPoint.transform.position, gunPoint.transform.rotation);
+                Debug.Log("bullet created");
+                bullet.GetComponent<Rigidbody2D>().AddForce(bulletDirection * bulletSpeed);
+                Debug.Log("velocity");
 
+            }
         }
+
     }
     private void ResetState()
     {
@@ -85,5 +90,10 @@ public class PlayerMovement : MonoBehaviour
         }
 
         spriteRenderer.sprite = sprites[spriteIndex];
+    }
+
+    private void GameOver()
+    {
+
     }
 }

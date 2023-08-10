@@ -63,13 +63,12 @@ public class EnemyManager : MonoBehaviour
 
     private int GetRandomPosition()
     {
-        int x = Random.Range(1, 3);
         int xPosition = 0;
-        if (x == 1)
+        if (XEnemyPosition >0)
         {
             xPosition = Random.Range(XEnemyPosition-29,XEnemyPosition -3);
         }
-        else if (x == 2)
+        else if (XEnemyPosition <= 0)
         {
             xPosition = Random.Range(XEnemyPosition+3, XEnemyPosition+ 29);
         }

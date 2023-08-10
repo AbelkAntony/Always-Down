@@ -20,7 +20,7 @@ public class FloorManager : MonoBehaviour
         for (int i = 0; i < 10; i++)
         {
             GameObject floor = Instantiate(floorPrefab);
-            int x = Random.Range(-30, 30);
+            int x = Random.Range(-27, 27);
             floor.transform.position = new Vector3(x, y, 0);
             gameManager.NewFloorPosition(x, y);
             y = y - 6;
@@ -29,7 +29,7 @@ public class FloorManager : MonoBehaviour
 
     public void RepositionFloor(GameObject floor)
     {
-        int x = Random.Range(-30, 30);
+        int x = Random.Range(-27, 27);
         floor.transform.position = new Vector3(x, y, 0);
         gameManager.NewFloorPosition(x, y);
         y = y - 6;
