@@ -20,5 +20,9 @@ public class FloorRepositioning : MonoBehaviour
             Debug.Log(collision);
             Debug.Log("triggeer repposition");
         }
+        else
+        {
+            Destroy(collision.gameObject);
+        }
     }
 }
