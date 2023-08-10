@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] GameObject gunPoint;
     public Sprite[] sprites;
     private int spriteIndex;
-    private void Awake()
+    private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();

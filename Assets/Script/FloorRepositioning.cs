@@ -5,7 +5,7 @@ using UnityEngine;
 public class FloorRepositioning : MonoBehaviour
 {
     private FloorManager floorManager;
-    private void Awake()
+    private void Start()
     {
          floorManager = FindAnyObjectByType<FloorManager>();
 
@@ -20,7 +20,7 @@ public class FloorRepositioning : MonoBehaviour
             Debug.Log(collision);
             Debug.Log("triggeer repposition");
         }
-        else
+        else if(collision.gameObject.tag !="Player")
         {
             Destroy(collision.gameObject);
         }

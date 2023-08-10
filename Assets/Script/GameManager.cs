@@ -4,10 +4,20 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] EnemyManager enemyManager;
-    [SerializeField] PlayerMovement player;
+     EnemyManager enemyManager;
+     PlayerMovement player;
+    
+    private int score;
     private int YFloorPosition;
     private int XFloorPosition;
+
+    public void Awake()
+    {
+        enemyManager = GameObject.FindAnyObjectByType<EnemyManager>();
+        player = GameObject.FindAnyObjectByType<PlayerMovement>();
+        GameObject.FindGameObjectWithTag("Player").SetActive(false);
+        NewGame();
+    }
     public void NewFloorPosition(int x,int y)
     {
         XFloorPosition = x;
@@ -19,5 +29,14 @@ public class GameManager : MonoBehaviour
     {
         player.takeDamage(damage);
     }
+
+    public void NewGame()
+    {
+        player.gameObject.SetActive(true);
+    }
     
+    public void AddScore()
+    {
+
+    }
 }
