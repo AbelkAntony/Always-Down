@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-     EnemyManager enemyManager;
-     PlayerMovement player;
+    private EnemyManager enemyManager;
+    private PlayerMovement player;
+    [SerializeField] GameObject uiManager;
     
     private int score;
     private int YFloorPosition;
@@ -14,13 +15,16 @@ public class GameManager : MonoBehaviour
 
     public void Awake()
     {
-        enemyManager = GameObject.FindAnyObjectByType<EnemyManager>();
+        DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(this.uiManager);
+        
         player = GameObject.FindAnyObjectByType<PlayerMovement>();
         //GameObject.FindGameObjectWithTag("Player").SetActive(false);
         //NewGame();
     }
     public void NewFloorPosition(int x,int y)
     {
+        enemyManager = GameObject.FindAnyObjectByType<EnemyManager>();
         XFloorPosition = x;
         YFloorPosition = y;
         enemyManager.EnemySpawn( x, y);

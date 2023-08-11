@@ -5,13 +5,14 @@ using UnityEngine;
 public class FloorManager : MonoBehaviour
 {
     [SerializeField] GameObject floorPrefab;
-    [SerializeField] GameManager gameManager;
+    private GameManager gameManager;
     GameObject floor;
     private int y = 15;
 
 
     private void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
         floor = Instantiate(floorPrefab);
         floor.transform.position = new Vector3(0, y, 0);
         y = y - 6;
