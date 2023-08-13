@@ -22,7 +22,7 @@ public class Fire : MonoBehaviour
         fire = GameObject.Find("Fire");
         InvokeRepeating(nameof(FireStatus),this.fireTimeIntervel,this.fireTimeIntervel);
     }
-    private void Update()
+    private void FixedUpdate()
     {
         if(fireStatus)
         {

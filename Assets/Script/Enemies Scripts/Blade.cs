@@ -19,6 +19,7 @@ public class Blade : MonoBehaviour
     }
     private void Update()
     {
+        this.gameObject.transform.Rotate(0f, 0.0f, 1.0f, Space.Self);
         if (gameObject.transform.position.x < position.x - 10)
             direction = Vector3.right;
         else if (gameObject.transform.position.x >= position.x + 10)
