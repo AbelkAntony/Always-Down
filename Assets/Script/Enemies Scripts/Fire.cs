@@ -5,18 +5,29 @@ using UnityEngine;
 public class Fire : MonoBehaviour
 {
     private EnemyManager enemyManager;
+    private SpriteRenderer spriteRenderer;
     private GameObject fire;
     private bool fireStatus = true;
     private float fireTimeIntervel = 4;
     public int life = 3;
     private int damagePoint = 10;
     private bool died = false;
+    private int spriteIndex;
+    public Sprite[] sprites;
 
     private void Start()
     {
         enemyManager = FindAnyObjectByType<EnemyManager>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         fire = GameObject.Find("Fire");
         InvokeRepeating(nameof(FireStatus),this.fireTimeIntervel,this.fireTimeIntervel);
+    }
+    private void Update()
+    {
+        if(fireStatus)
+        {
+            AnimateSprite();
+        }
     }
 
     private void FireStatus()
@@ -55,5 +66,16 @@ public class Fire : MonoBehaviour
             CancelInvoke(nameof(FireStatus));
             Destroy(gameObject);
         }
+    }
+
+    private void AnimateSprite()
+    {
+        spriteIndex++;
+        if (spriteIndex >= sprites.Length)
+        {
+            spriteIndex = 0;
+        }
+
+        spriteRenderer.sprite = sprites[spriteIndex];
     }
 }
