@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
 
     public void PlayerTakeDamage(int damage)
     {
-        
+        player = GameObject.FindAnyObjectByType<PlayerMovement>();
         player.takeDamage(damage);
     }
 
