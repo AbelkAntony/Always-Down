@@ -17,10 +17,10 @@ public class GameManager : MonoBehaviour
     {
         DontDestroyOnLoad(this.gameObject);
         DontDestroyOnLoad(this.uiManager.gameObject);
-        player = GameObject.FindAnyObjectByType<PlayerMovement>();
+        uiManager.StartWindow();
+
         //GameObject.FindGameObjectWithTag("Player").SetActive(false);
         //NewGame();
-        SceneManager.LoadScene(0);
     }
     public void NewFloorPosition(int x,int y)
     {
@@ -43,7 +43,8 @@ public class GameManager : MonoBehaviour
         uiManager.NewGame();
         player = GameObject.FindAnyObjectByType<PlayerMovement>();
         enemyManager = GameObject.FindAnyObjectByType<EnemyManager>();
-        ResetGame();
+        score = 0;
+        uiManager.UpdateScore(score);
     }
     
     public void AddScore(int _score)
@@ -53,12 +54,12 @@ public class GameManager : MonoBehaviour
     }
     public void GameOver()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(2);
         uiManager.GamOver();
     }
-    private void ResetGame()
+  
+    public void StartMenu()
     {
-        score = 0;
-        player.SetPlayerHealth();
+        uiManager.StartWindow();
     }
 }

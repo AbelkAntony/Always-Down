@@ -1257,9 +1257,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1631086228}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: Awake
+      - m_Target: {fileID: 80676889}
+        m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
+        m_MethodName: StartWindow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

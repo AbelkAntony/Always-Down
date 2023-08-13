@@ -23,11 +23,12 @@ public class UiManager : MonoBehaviour
         DontDestroyOnLoad(score);
         DontDestroyOnLoad(scoreValue);*/
         DontDestroyOnLoad(canvas);
-        StartWindow();
+        
     }
 
-    private void StartWindow()
+    public void StartWindow()
     {
+        
         startbutton.SetActive(true);
         gameName.SetActive(true);
         life.SetActive(false);

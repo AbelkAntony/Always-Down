@@ -81,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }
-    private void ResetState()
+    public void ResetState()
     {
         playerHealth = 100;
         playerAlive = true;
