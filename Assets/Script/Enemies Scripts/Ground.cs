@@ -10,6 +10,7 @@ public class Ground : MonoBehaviour
     private Vector3 direction;
     private int randomNumber;
     private int damagePoint = 15;
+    private int point = 20;
     public int life = 2;
     private void Awake()
     {
@@ -88,6 +89,7 @@ public class Ground : MonoBehaviour
     {
         if (life <= 0)
         {
+            enemyManager.AddScore(point);
             Destroy(gameObject);
         }
         else

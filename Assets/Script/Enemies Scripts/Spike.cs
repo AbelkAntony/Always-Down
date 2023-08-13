@@ -9,6 +9,7 @@ public class Spike : MonoBehaviour
     public int life = 3;
     private int damagePoint = 10;
     private Vector3 enemyPosition;
+    private int point = 30;
 
     private void Start()
     {
@@ -55,6 +56,7 @@ public class Spike : MonoBehaviour
     {
         if (life <= 0)
         {
+            enemyManager.AddScore(point);
             Destroy(gameObject);
         }
         else

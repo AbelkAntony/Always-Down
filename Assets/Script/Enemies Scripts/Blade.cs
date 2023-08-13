@@ -9,7 +9,8 @@ public class Blade : MonoBehaviour
     private float movementSpeed = 10;
     private Vector3 direction = Vector3.left;
     private int damagePoint = 20;
-    public int life = 5;
+    private int life = 5;
+    private int point = 15;
     private void Awake()
     {
 
@@ -46,6 +47,7 @@ public class Blade : MonoBehaviour
     {
         if (life <= 0)
         {
+            enemyManager.AddScore(point);
             Destroy(gameObject);
         }
         else

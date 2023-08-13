@@ -32,7 +32,10 @@ public class PlayerMovement : MonoBehaviour
     public void takeDamage(int damage)
     {
         if(playerHealth>damage)
+        {
             playerHealth -= damage;
+            
+        }
         else if(playerHealth<=damage )
         {
             playerHealth = 0;
@@ -41,8 +44,10 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+
     public int  GetPlayerHealth()       {       return playerHealth;       }
     public bool IsPlayerAlive()         {       return playerAlive;        }    
+    public void SetPlayerHealth()       {       playerHealth = 100;        }
     private void Update()
     {
         if(playerAlive)

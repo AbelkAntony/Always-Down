@@ -13,6 +13,7 @@ public class Fire : MonoBehaviour
     private int damagePoint = 10;
     private bool died = false;
     private int spriteIndex;
+    private int point = 5;
     public Sprite[] sprites;
 
     private void Start()
@@ -65,6 +66,7 @@ public class Fire : MonoBehaviour
         life--;
         if (life<=0)
         {
+            enemyManager.AddScore(point);
             CancelInvoke(nameof(FireStatus));
             Destroy(gameObject);
         }

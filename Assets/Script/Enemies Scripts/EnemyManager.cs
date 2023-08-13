@@ -79,8 +79,8 @@ public class EnemyManager : MonoBehaviour
         return xPosition;
     }
 
-    public void AddScore()
+    public void AddScore(int score)
     {
-        gameManager.AddScore();
+        gameManager.AddScore(score);
     }
 }
