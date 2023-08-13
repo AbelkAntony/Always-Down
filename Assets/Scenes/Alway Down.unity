@@ -212,7 +212,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7267ced3d9066640822d7d3415aadc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
   enemyPrefab:
   - {fileID: 4359564182869255368, guid: 6e70c6117116f0543a0e207744df6feb, type: 3}
   - {fileID: 5823138558487602635, guid: c3b85b512f21de6498e0482bb25f2cc5, type: 3}
@@ -469,11 +468,11 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0.3605571, g: 0.9245283, b: 0, a: 1}
+  m_Sprite: {fileID: -1205088754, guid: 8deef1339be1b0d4690ac1e9740194d6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
+  m_DrawMode: 1
   m_Size: {x: 1, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
@@ -489,7 +488,7 @@ Transform:
   m_GameObject: {fileID: 953606771}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -30, y: 20, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 872853337}
@@ -509,8 +508,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Offset: {x: -0.038517952, y: -0.008889198}
+  m_Size: {x: 0.41335487, y: 1.6740856}
   m_Direction: 0
 --- !u!50 &953606775
 Rigidbody2D:
@@ -548,10 +547,10 @@ MonoBehaviour:
   bulletprefab: {fileID: 1980251901539756505, guid: 8fb2f7a1ecc6d9a48afa20e7c5dad09c, type: 3}
   gunPoint: {fileID: 872853336}
   sprites:
-  - {fileID: 1444190593, guid: 7932f16c659b96140a2a130f621866a4, type: 3}
-  - {fileID: 1563675066, guid: 7932f16c659b96140a2a130f621866a4, type: 3}
-  - {fileID: -643233536, guid: 7932f16c659b96140a2a130f621866a4, type: 3}
-  - {fileID: -754160106, guid: 7932f16c659b96140a2a130f621866a4, type: 3}
+  - {fileID: -1205088754, guid: 8deef1339be1b0d4690ac1e9740194d6, type: 3}
+  - {fileID: -1600189710, guid: 8deef1339be1b0d4690ac1e9740194d6, type: 3}
+  - {fileID: 67007618, guid: 8deef1339be1b0d4690ac1e9740194d6, type: 3}
+  - {fileID: -94326, guid: 8deef1339be1b0d4690ac1e9740194d6, type: 3}
 --- !u!1 &1181112769
 GameObject:
   m_ObjectHideFlags: 0

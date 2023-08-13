@@ -52,14 +52,14 @@ public class PlayerMovement : MonoBehaviour
                 rb.AddForce(Vector2.right * speed);
                 this.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
                 bulletDirection = Vector2.right;
-                //AnimateSprite();
+                AnimateSprite();
             }
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
             {
                 rb.AddForce(Vector2.left * speed);
-                this.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180));
+                this.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
                 bulletDirection = Vector2.left;
-                //AnimateSprite();
+                AnimateSprite();
             }
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -69,7 +69,6 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.LeftControl) && haveGun)
             {
                 GameObject bullet = Instantiate(bulletprefab, gunPoint.transform.position, gunPoint.transform.rotation);
-                Debug.Log("bullet created");
                 bullet.GetComponent<Rigidbody2D>().AddForce(bulletDirection * bulletSpeed);
                 Debug.Log("velocity");
 
