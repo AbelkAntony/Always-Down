@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    [SerializeField] GameManager gameManager;
+    private GameManager gameManager;
     [SerializeField] GameObject[] enemyPrefab;
     private int XEnemyPosition;
     private int YEnemyPosition;
@@ -12,6 +12,10 @@ public class EnemyManager : MonoBehaviour
     private Vector3 enemySpawnPosition;
     private GameObject enemy;
 
+    private void Start()
+    {
+        gameManager = FindAnyObjectByType<GameManager>();
+    }
     public void EnemySpawn(int x,int y)
     {
         XEnemyPosition = x;

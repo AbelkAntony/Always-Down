@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    private GameManager gameManager;
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
     private float speed = 5f;
@@ -20,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     private int spriteIndex;
     private void Start()
     {
+        gameManager = FindAnyObjectByType<GameManager>();
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         ResetState();
@@ -35,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
         {
             playerHealth = 0;
             playerAlive = false;
-            GameOver();
+            gameManager.GameOver();
         }
     }
 
@@ -92,8 +94,5 @@ public class PlayerMovement : MonoBehaviour
         spriteRenderer.sprite = sprites[spriteIndex];
     }
 
-    private void GameOver()
-    {
-
-    }
+    
 }
