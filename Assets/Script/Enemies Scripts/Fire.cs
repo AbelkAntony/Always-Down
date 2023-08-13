@@ -6,7 +6,7 @@ public class Fire : MonoBehaviour
 {
     private EnemyManager enemyManager;
     private SpriteRenderer spriteRenderer;
-    private GameObject fire;
+    private Fire fire;
     private bool fireStatus = true;
     private float fireTimeIntervel = 4;
     public int life = 3;
@@ -19,7 +19,7 @@ public class Fire : MonoBehaviour
     {
         enemyManager = FindAnyObjectByType<EnemyManager>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        fire = GameObject.Find("Fire");
+        //fire = GameObject.Find("Fire");
         InvokeRepeating(nameof(FireStatus),this.fireTimeIntervel,this.fireTimeIntervel);
     }
     private void FixedUpdate()
@@ -36,12 +36,14 @@ public class Fire : MonoBehaviour
         {
             if(fireStatus)
             {
-                fire.SetActive(false);
+                this.gameObject.SetActive(false);
+                //fire.SetActive(false);
                 fireStatus = false;
             }
             else
             {
-                fire.SetActive(true);
+                this.gameObject.SetActive(true);
+                //fire.SetActive(true);
                 fireStatus = true;
             }
         }

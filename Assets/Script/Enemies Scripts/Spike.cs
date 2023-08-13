@@ -27,13 +27,13 @@ public class Spike : MonoBehaviour
         if(from.y==enemyPosition.y)
         {
            // Debug.Log("y--");
-            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y - 1, this.transform.position.z);
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y - 1.3f, this.transform.position.z);
             
         }
         else
         {
            // Debug.Log("y++");
-            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 1, this.transform.position.z);
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 1.3f, this.transform.position.z);
             /*to = new Vector3(this.transform.position.x, this.transform.position.y + 1, this.transform.position.z);
             this.transform.position = Vector3.Lerp(from, to, elapsed / duration);*/
         }

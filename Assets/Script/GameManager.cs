@@ -17,7 +17,6 @@ public class GameManager : MonoBehaviour
     {
         DontDestroyOnLoad(this.gameObject);
         DontDestroyOnLoad(this.uiManager);
-        
         player = GameObject.FindAnyObjectByType<PlayerMovement>();
         //GameObject.FindGameObjectWithTag("Player").SetActive(false);
         //NewGame();
@@ -32,12 +31,15 @@ public class GameManager : MonoBehaviour
 
     public void PlayerTakeDamage(int damage)
     {
+        
         player.takeDamage(damage);
     }
 
     public void NewGame()
     {
         SceneManager.LoadScene(1);
+        player = GameObject.FindAnyObjectByType<PlayerMovement>();
+        enemyManager = GameObject.FindAnyObjectByType<EnemyManager>();
     }
     
     public void AddScore()
@@ -46,6 +48,6 @@ public class GameManager : MonoBehaviour
     }
     public void GameOver()
     {
-
+        SceneManager.LoadScene(2);
     }
 }
