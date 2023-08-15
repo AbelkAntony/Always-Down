@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     {
         DontDestroyOnLoad(this.gameObject);
         DontDestroyOnLoad(this.uiManager.gameObject);
-        uiManager.StartWindow();
+        //uiManager.StartWindow();
 
         //GameObject.FindGameObjectWithTag("Player").SetActive(false);
         //NewGame();
@@ -60,6 +60,6 @@ public class GameManager : MonoBehaviour
   
     public void StartMenu()
     {
-        uiManager.StartWindow();
+        SceneManager.LoadScene(0);
     }
 }
