@@ -39,11 +39,13 @@ public class Ground : MonoBehaviour
         {
             if (gameObject.transform.position.x > position.x - 2.9)
                 direction = Vector3.left;
+            
         }
         if(randomNumber ==0)
         {
             if (gameObject.transform.position.x < position.x + 2.9)
                 direction = Vector3.right;
+           
         }
     }
     private void FixedUpdate()
@@ -80,11 +82,13 @@ public class Ground : MonoBehaviour
         {
             enemyManager.PlayerTakeDamage(damagePoint);
         }
-        else if (collision.gameObject.tag == "Floor")
+        else if (collision.gameObject.tag == "Floor Spawner")
         {
             Destroy(this.gameObject);
         }
     }
+
+   
     public void TakeDamage()
     {
         if (life <= 0)

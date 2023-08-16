@@ -13,8 +13,6 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 bulletDirection = Vector2.right;
     private bool haveGun = true;
     private int playerHealth;
-    private bool playerAlive;
-
     [SerializeField] GameObject bulletprefab;
     [SerializeField] GameObject gunPoint;
     public Sprite[] sprites;
@@ -39,52 +37,49 @@ public class PlayerMovement : MonoBehaviour
         else if(playerHealth<=damage )
         {
             playerHealth = 0;
-            playerAlive = false;
             gameManager.GameOver();
         }
     }
 
 
     public int  GetPlayerHealth()       {       return playerHealth;       }
-    public bool IsPlayerAlive()         {       return playerAlive;        }    
+    //public bool IsPlayerAlive()         {       return playerAlive;        }    
     public void SetPlayerHealth()       {       playerHealth = 100;        }
     private void Update()
     {
-        if(playerAlive)
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
-            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-            {
-                rb.AddForce(Vector2.right * speed);
-                this.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-                bulletDirection = Vector2.right;
-                AnimateSprite();
-            }
-            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-            {
-                rb.AddForce(Vector2.left * speed);
-                this.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
-                bulletDirection = Vector2.left;
-                AnimateSprite();
-            }
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                rb.AddForce(Vector2.up * jumpForce);
-                Debug.Log("Jump");
-            }
-            if (Input.GetKeyDown(KeyCode.LeftControl) && haveGun)
-            {
-                GameObject bullet = Instantiate(bulletprefab, gunPoint.transform.position, gunPoint.transform.rotation);
-                bullet.GetComponent<Rigidbody2D>().AddForce(bulletDirection * bulletSpeed);
-                Debug.Log("velocity");
+            rb.AddForce(Vector2.right * speed);
+            this.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+            bulletDirection = Vector2.right;
+            AnimateSprite();
+        }
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        {
+            rb.AddForce(Vector2.left * speed);
+            this.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+            bulletDirection = Vector2.left;
+            AnimateSprite();
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            rb.AddForce(Vector2.up * jumpForce);
+            //Debug.Log("Jump");
+        }
+        if (Input.GetKeyDown(KeyCode.LeftControl) && haveGun)
+        {
+            GameObject bullet = Instantiate(bulletprefab, gunPoint.transform.position, gunPoint.transform.rotation);
+            bullet.GetComponent<Rigidbody2D>().AddForce(bulletDirection * bulletSpeed);
+            //Debug.Log("velocity");
 
-            }
         }
 
     }
     public void ResetState()
     {
         playerHealth = 100;
-        playerAlive = true;
+        this.transform.position = new Vector3(-30, this.transform.position.y, this.transform.position.z);
+       // playerAlive = true;
     }
 
     private void AnimateSprite()

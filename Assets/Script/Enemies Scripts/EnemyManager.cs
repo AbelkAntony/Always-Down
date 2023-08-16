@@ -75,11 +75,11 @@ public class EnemyManager : MonoBehaviour
         int xPosition = 0;
         if (XEnemyPosition >0)
         {
-            xPosition = Random.Range(XEnemyPosition-29,XEnemyPosition -3);
+            xPosition = Random.Range(XEnemyPosition-29,XEnemyPosition -5);
         }
         else if (XEnemyPosition <= 0)
         {
-            xPosition = Random.Range(XEnemyPosition+3, XEnemyPosition+ 29);
+            xPosition = Random.Range(XEnemyPosition+5, XEnemyPosition+ 29);
         }
         return xPosition;
     }

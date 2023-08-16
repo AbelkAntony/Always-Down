@@ -52,6 +52,10 @@ public class Spike : MonoBehaviour
         {
             enemyManager.PlayerTakeDamage(damagePoint);
         }
+        else if (collision.gameObject.tag == "Floor Spawner")
+        {
+            Destroy(this.gameObject);
+        }
     }
     public void TakeDamage()
     {

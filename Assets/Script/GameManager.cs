@@ -44,6 +44,8 @@ public class GameManager : MonoBehaviour
         uiManager.NewGame();
         player.gameObject.SetActive(true);
         floor.CreateFloor();
+        player.ResetState();
+        uiManager.UpdatePlayerHelath(player.GetPlayerHealth());
         //player = GameObject.FindAnyObjectByType<PlayerMovement>();
         //enemyManager = GameObject.FindAnyObjectByType<EnemyManager>();
         score = 0;
