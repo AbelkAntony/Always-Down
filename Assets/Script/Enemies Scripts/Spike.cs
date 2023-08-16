@@ -29,12 +29,13 @@ public class Spike : MonoBehaviour
         {
            // Debug.Log("y--");
             this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y - 1.7f, this.transform.position.z);
-            
+            this.gameObject.layer = LayerMask.NameToLayer("Background");
         }
         else
         {
            // Debug.Log("y++");
             this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 1.7f, this.transform.position.z);
+            this.gameObject.layer = LayerMask.NameToLayer("Enemy");
             /*to = new Vector3(this.transform.position.x, this.transform.position.y + 1, this.transform.position.z);
             this.transform.position = Vector3.Lerp(from, to, elapsed / duration);*/
         }

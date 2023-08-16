@@ -49,7 +49,7 @@ public class EnemyManager : MonoBehaviour
                 break;
             case 3:
                 xPosition = GetRandomPosition();
-                enemySpawnPosition = new Vector3(xPosition, YEnemyPosition + 1, 0);
+                enemySpawnPosition = new Vector3(xPosition, YEnemyPosition + 1.8f, 0);
                 //enemy = Instantiate(enemyPrefab[enemyindex], enemySpawnPosition, Quaternion.identity);
                 break;
 
