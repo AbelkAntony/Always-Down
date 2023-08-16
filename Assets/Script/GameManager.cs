@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    private EnemyManager enemyManager;
-    private PlayerMovement player;
+    [SerializeField] EnemyManager enemyManager;
+    [SerializeField] PlayerMovement player;
     [SerializeField] UiManager uiManager;
+    [SerializeField] FloorManager floor;
     
     private int score;
     private int YFloorPosition;
@@ -15,10 +16,10 @@ public class GameManager : MonoBehaviour
 
     public void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
-        DontDestroyOnLoad(this.uiManager.gameObject);
-        //uiManager.StartWindow();
-
+        //DontDestroyOnLoad(this.gameObject);
+        //DontDestroyOnLoad(this.uiManager.gameObject);
+        uiManager.StartWindow();
+        player.gameObject.SetActive(false);
         //GameObject.FindGameObjectWithTag("Player").SetActive(false);
         //NewGame();
     }
@@ -39,10 +40,12 @@ public class GameManager : MonoBehaviour
 
     public void NewGame()
     {
-        SceneManager.LoadScene(1);
+        
         uiManager.NewGame();
-        player = GameObject.FindAnyObjectByType<PlayerMovement>();
-        enemyManager = GameObject.FindAnyObjectByType<EnemyManager>();
+        player.gameObject.SetActive(true);
+        floor.CreateFloor();
+        //player = GameObject.FindAnyObjectByType<PlayerMovement>();
+        //enemyManager = GameObject.FindAnyObjectByType<EnemyManager>();
         score = 0;
         uiManager.UpdateScore(score);
     }
@@ -54,12 +57,12 @@ public class GameManager : MonoBehaviour
     }
     public void GameOver()
     {
-        SceneManager.LoadScene(2);
+        //SceneManager.LoadScene(0);
+        player.gameObject.SetActive(false);
         uiManager.GamOver();
+        enemyManager.DestroyEnemies();
+        floor.DestroyFloors();
+        
     }
   
-    public void StartMenu()
-    {
-        SceneManager.LoadScene(0);
-    }
 }

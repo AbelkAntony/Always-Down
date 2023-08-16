@@ -13,7 +13,8 @@ public class UiManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI scoreValue;
     [SerializeField] GameObject canvas;
     [SerializeField] GameObject gameOver;
-    [SerializeField] GameObject startMenu;
+    //[SerializeField] GameObject startMenu;
+    
     private void Start()
     {
         /*DontDestroyOnLoad(startbutton);
@@ -22,7 +23,7 @@ public class UiManager : MonoBehaviour
         DontDestroyOnLoad(lifeValue);
         DontDestroyOnLoad(score);
         DontDestroyOnLoad(scoreValue);*/
-        DontDestroyOnLoad(canvas);
+        //DontDestroyOnLoad(canvas);
         
     }
 
@@ -36,7 +37,7 @@ public class UiManager : MonoBehaviour
         score.SetActive(false);
         scoreValue.gameObject.SetActive(false);
         gameOver.SetActive(false);
-        startMenu.SetActive(false);
+        //startMenu.SetActive(false);
     }
 
     public void NewGame()
@@ -48,18 +49,19 @@ public class UiManager : MonoBehaviour
         score.SetActive(true);
         scoreValue.gameObject.SetActive(true);
         gameOver.SetActive(false);
-        startMenu.SetActive(false);
+        //startMenu.SetActive(false);
     }
     public void GamOver()
     {
-        startbutton.SetActive(false);
-        gameName.SetActive(false);
+        //startbutton.SetActive(false);
+        //gameName.SetActive(false);
         life.SetActive(true);
         lifeValue.gameObject.SetActive(true);
         score.SetActive(true);
         scoreValue.gameObject.SetActive(true);
         gameOver.SetActive(true);
-        startMenu.SetActive(true);
+        //startMenu.SetActive(true);
+        Invoke("StartWindow", 4f);
     }
 
     public void UpdatePlayerHelath(int playerHealth)

@@ -6,11 +6,13 @@ public class EnemyManager : MonoBehaviour
 {
     private GameManager gameManager;
     [SerializeField] GameObject[] enemyPrefab;
+   // private GameObject[] spawnedEnemies;
     private int XEnemyPosition;
     private int YEnemyPosition;
     private int xPosition;
     private Vector3 enemySpawnPosition;
     private GameObject enemy;
+    //private int numberOfEnemies=0;
 
     private void Start()
     {
@@ -34,24 +36,27 @@ public class EnemyManager : MonoBehaviour
         {
             case 0:
                 enemySpawnPosition = new Vector3(XEnemyPosition, YEnemyPosition + 1, 0);
-                enemy = Instantiate(enemyPrefab[enemyindex],enemySpawnPosition,Quaternion.identity);
+                //enemy = Instantiate(enemyPrefab[enemyindex],enemySpawnPosition,Quaternion.identity);
                 break;
             case 1:
                 enemySpawnPosition = new Vector3(XEnemyPosition, YEnemyPosition - 3, 0);
-                enemy = Instantiate(enemyPrefab[enemyindex], enemySpawnPosition, Quaternion.identity);
+                //enemy = Instantiate(enemyPrefab[enemyindex], enemySpawnPosition, Quaternion.identity);
                 break;
             case 2:
                 xPosition = GetRandomPosition();
                 enemySpawnPosition = new Vector3(xPosition, YEnemyPosition + 1, 0);
-                enemy = Instantiate(enemyPrefab[enemyindex], enemySpawnPosition, Quaternion.identity);
+                //enemy = Instantiate(enemyPrefab[enemyindex], enemySpawnPosition, Quaternion.identity);
                 break;
             case 3:
                 xPosition = GetRandomPosition();
                 enemySpawnPosition = new Vector3(xPosition, YEnemyPosition + 1, 0);
-                enemy = Instantiate(enemyPrefab[enemyindex], enemySpawnPosition, Quaternion.identity);
+                //enemy = Instantiate(enemyPrefab[enemyindex], enemySpawnPosition, Quaternion.identity);
                 break;
 
         }
+        enemy = Instantiate(enemyPrefab[enemyindex], enemySpawnPosition, Quaternion.identity);
+        //spawnedEnemies[numberOfEnemies] = enemy;
+        //numberOfEnemies++;
     }
     
 
@@ -82,5 +87,16 @@ public class EnemyManager : MonoBehaviour
     public void AddScore(int score)
     {
         gameManager.AddScore(score);
+    }
+
+    public void DestroyEnemies()
+    {
+        GameObject[] enemies;
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        for (int i =0;i< enemies.Length;i++)
+        {
+            Destroy(enemies[i].gameObject);
+        }
+        
     }
 }
