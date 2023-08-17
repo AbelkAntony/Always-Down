@@ -20,24 +20,16 @@ public class Spike : MonoBehaviour
 
     private void SpikeStatus()
     {
-        //Debug.Log("spikestatus");
-        //float elapsed = 0f;
-        //float duration = 0.1f;
         Vector3 from = this.transform.position;
-        //Vector3 to;
         if(from.y==enemyPosition.y)
         {
-           // Debug.Log("y--");
             this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y - 1.7f, this.transform.position.z);
             this.gameObject.layer = LayerMask.NameToLayer("Background");
         }
         else
         {
-           // Debug.Log("y++");
             this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 1.7f, this.transform.position.z);
             this.gameObject.layer = LayerMask.NameToLayer("Enemy");
-            /*to = new Vector3(this.transform.position.x, this.transform.position.y + 1, this.transform.position.z);
-            this.transform.position = Vector3.Lerp(from, to, elapsed / duration);*/
         }
     }
 

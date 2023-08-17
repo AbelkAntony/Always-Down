@@ -64,11 +64,12 @@ public class Ground : MonoBehaviour
         {
             direction = Vector3.left;
         }
-       /* else if (collision.gameObject.name == "Player"|| collision.gameObject.name == "Bullet")
+        else if (collision.gameObject.name == "Player")
         {
+            enemyManager.PlayerTakeDamage(damagePoint);
             Destroy(gameObject);
-            //particles system to be done
-        }*/
+            
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -77,10 +78,6 @@ public class Ground : MonoBehaviour
         if(collision.name=="Bullet")
         {
             TakeDamage();
-        }
-        else if(collision.name=="Player")
-        {
-            enemyManager.PlayerTakeDamage(damagePoint);
         }
         else if (collision.gameObject.tag == "Floor Spawner")
         {

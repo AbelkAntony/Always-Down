@@ -20,7 +20,6 @@ public class Fire : MonoBehaviour
     {
         enemyManager = FindAnyObjectByType<EnemyManager>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        //fire = GameObject.Find("Fire");
         InvokeRepeating(nameof(FireStatus),this.fireTimeIntervel,this.fireTimeIntervel);
     }
     private void FixedUpdate()
@@ -38,13 +37,11 @@ public class Fire : MonoBehaviour
             if(fireStatus)
             {
                 this.gameObject.SetActive(false);
-                //fire.SetActive(false);
                 fireStatus = false;
             }
             else
             {
                 this.gameObject.SetActive(true);
-                //fire.SetActive(true);
                 fireStatus = true;
             }
         }

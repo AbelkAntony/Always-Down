@@ -6,13 +6,11 @@ public class EnemyManager : MonoBehaviour
 {
     private GameManager gameManager;
     [SerializeField] GameObject[] enemyPrefab;
-   // private GameObject[] spawnedEnemies;
     private int XEnemyPosition;
     private int YEnemyPosition;
     private int xPosition;
     private Vector3 enemySpawnPosition;
     private GameObject enemy;
-    //private int numberOfEnemies=0;
 
     private void Start()
     {
