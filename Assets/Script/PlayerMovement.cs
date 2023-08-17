@@ -23,8 +23,6 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         ResetState();
-        
-        //AnimateSprite();
     }
 
     public void takeDamage(int damage)
@@ -43,7 +41,6 @@ public class PlayerMovement : MonoBehaviour
 
 
     public int  GetPlayerHealth()       {       return playerHealth;       }
-    //public bool IsPlayerAlive()         {       return playerAlive;        }    
     public void SetPlayerHealth()       {       playerHealth = 100;        }
     private void Update()
     {
@@ -64,13 +61,11 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             rb.AddForce(Vector2.up * jumpForce);
-            //Debug.Log("Jump");
         }
         if (Input.GetKeyDown(KeyCode.LeftControl) && haveGun)
         {
             GameObject bullet = Instantiate(bulletprefab, gunPoint.transform.position, gunPoint.transform.rotation);
             bullet.GetComponent<Rigidbody2D>().AddForce(bulletDirection * bulletSpeed);
-            //Debug.Log("velocity");
 
         }
 
@@ -79,7 +74,6 @@ public class PlayerMovement : MonoBehaviour
     {
         playerHealth = 100;
         this.transform.position = new Vector3(-30, this.transform.position.y, this.transform.position.z);
-       // playerAlive = true;
     }
 
     private void AnimateSprite()
