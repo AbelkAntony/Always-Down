@@ -7,3 +7,10 @@
 - Blade will moves to and fro motion
 - Spike will spawn and go back to ground
 - Player can fire bullet and kill enemies to take points
+
+
+
+
+
+https://github.com/AbelkAntony/Always-Down/assets/122546743/d1dcaa7f-d8b6-442e-ba1b-6eca1572c990
+
