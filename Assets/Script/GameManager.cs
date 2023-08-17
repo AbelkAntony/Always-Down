@@ -11,23 +11,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] FloorManager floor;
     
     private int score;
-    private int YFloorPosition;
-    private int XFloorPosition;
 
     public void Awake()
     {
-        //DontDestroyOnLoad(this.gameObject);
-        //DontDestroyOnLoad(this.uiManager.gameObject);
         uiManager.StartWindow();
         player.gameObject.SetActive(false);
-        //GameObject.FindGameObjectWithTag("Player").SetActive(false);
-        //NewGame();
     }
     public void NewFloorPosition(int x,int y)
     {
         enemyManager = GameObject.FindAnyObjectByType<EnemyManager>();
-        XFloorPosition = x;
-        YFloorPosition = y;
         enemyManager.EnemySpawn( x, y);
     }
 
@@ -46,8 +38,6 @@ public class GameManager : MonoBehaviour
         floor.CreateFloor();
         player.ResetState();
         uiManager.UpdatePlayerHelath(player.GetPlayerHealth());
-        //player = GameObject.FindAnyObjectByType<PlayerMovement>();
-        //enemyManager = GameObject.FindAnyObjectByType<EnemyManager>();
         score = 0;
         uiManager.UpdateScore(score);
     }
@@ -59,7 +49,6 @@ public class GameManager : MonoBehaviour
     }
     public void GameOver()
     {
-        //SceneManager.LoadScene(0);
         player.gameObject.SetActive(false);
         uiManager.GamOver();
         enemyManager.DestroyEnemies();

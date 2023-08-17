@@ -31,32 +31,26 @@ public class EnemyManager : MonoBehaviour
 
     private void CreateEnemy()
     {
-        int enemyindex = Random.Range(0, 4);
+        int enemyindex = Random.Range(0, 1);
         switch(enemyindex)
         {
             case 0:
                 enemySpawnPosition = new Vector3(XEnemyPosition, YEnemyPosition + 1, 0);
-                //enemy = Instantiate(enemyPrefab[enemyindex],enemySpawnPosition,Quaternion.identity);
                 break;
             case 1:
                 enemySpawnPosition = new Vector3(XEnemyPosition, YEnemyPosition - 3, 0);
-                //enemy = Instantiate(enemyPrefab[enemyindex], enemySpawnPosition, Quaternion.identity);
                 break;
             case 2:
                 xPosition = GetRandomPosition();
                 enemySpawnPosition = new Vector3(xPosition, YEnemyPosition + 1, 0);
-                //enemy = Instantiate(enemyPrefab[enemyindex], enemySpawnPosition, Quaternion.identity);
                 break;
             case 3:
                 xPosition = GetRandomPosition();
                 enemySpawnPosition = new Vector3(xPosition, YEnemyPosition + 1.8f, 0);
-                //enemy = Instantiate(enemyPrefab[enemyindex], enemySpawnPosition, Quaternion.identity);
                 break;
 
         }
         enemy = Instantiate(enemyPrefab[enemyindex], enemySpawnPosition, Quaternion.identity);
-        //spawnedEnemies[numberOfEnemies] = enemy;
-        //numberOfEnemies++;
     }
     
 
