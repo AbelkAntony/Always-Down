@@ -70,12 +70,7 @@ public class Ground : MonoBehaviour
             Destroy(gameObject);
             
         }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-
-        if(collision.name=="Bullet")
+        else if (collision.gameObject.tag == "Bullet")
         {
             TakeDamage();
         }
@@ -83,6 +78,19 @@ public class Ground : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+       /* if(collision.name=="Bullet")
+        {
+            TakeDamage();
+        }
+        else if (collision.gameObject.tag == "Floor Spawner")
+        {
+            Destroy(this.gameObject);
+        }*/
     }
 
    
