@@ -36,7 +36,7 @@ public class EnemyManager : MonoBehaviour
                 enemySpawnPosition = new Vector3(XEnemyPosition, YEnemyPosition + 1, 0);
                 break;
             case 1:
-                enemySpawnPosition = new Vector3(XEnemyPosition, YEnemyPosition - 3, 0);
+                enemySpawnPosition = new Vector3(XEnemyPosition, YEnemyPosition - 5, 0);
                 break;
             case 2:
                 xPosition = GetRandomPosition();

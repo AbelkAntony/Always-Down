@@ -28,7 +28,7 @@ public class FloorRepositioning : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Player")
         {
-            gameManager.PlayerTakeDamage(5);
+            gameManager.PlayerTakeDamage(100);
         }
     }
 }

@@ -60,21 +60,22 @@ public class Ground : MonoBehaviour
         {
             direction = Vector3.right;
         }
-        else if (collision.gameObject.name == "Right")
+        if (collision.gameObject.name == "Right")
         {
             direction = Vector3.left;
         }
-        else if (collision.gameObject.name == "Player")
+        if (collision.gameObject.name == "Player")
         {
             enemyManager.PlayerTakeDamage(damagePoint);
             Destroy(gameObject);
             
         }
-        else if (collision.gameObject.tag == "Bullet")
+        if (collision.gameObject.tag == "Bullet")
         {
+            Debug.Log(collision.gameObject.name);
             TakeDamage();
         }
-        else if (collision.gameObject.tag == "Floor Spawner")
+        if (collision.gameObject.name == "Floor Spawner")
         {
             Destroy(this.gameObject);
         }
@@ -83,11 +84,12 @@ public class Ground : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-       /* if(collision.name=="Bullet")
+        if (collision.name == "Bullet")
         {
+            Debug.Log(collision.gameObject.name);
             TakeDamage();
         }
-        else if (collision.gameObject.tag == "Floor Spawner")
+       /* else if (collision.gameObject.tag == "Floor Spawner")
         {
             Destroy(this.gameObject);
         }*/

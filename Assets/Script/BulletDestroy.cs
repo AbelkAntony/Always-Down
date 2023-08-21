@@ -7,8 +7,8 @@ public class BulletDestroy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(this.gameObject);
-        Debug.Log(collision.gameObject.name);
+        //Destroy(this.gameObject);
+        //Debug.Log(collision.gameObject.name);
     }
     /* private void OnTriggerEnter2D(Collider2D collision)
      {
@@ -22,6 +22,6 @@ public class BulletDestroy : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Destroy(this.gameObject);
-        Debug.Log(collision.gameObject.name);
+       // Debug.Log(collision.gameObject.name);
     }
 }
