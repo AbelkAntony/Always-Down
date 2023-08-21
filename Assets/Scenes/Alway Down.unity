@@ -166,7 +166,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &213257430
 GameObject:
@@ -198,7 +198,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &213257432
 MonoBehaviour:
@@ -496,7 +496,7 @@ Transform:
   - {fileID: 2113018939}
   - {fileID: 1181112771}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &519420033
 MonoBehaviour:
@@ -511,6 +511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 953606771}
+  movementSpeed: 1
 --- !u!1 &643870985
 GameObject:
   m_ObjectHideFlags: 0
@@ -1272,7 +1273,7 @@ Transform:
   m_Children:
   - {fileID: 872853337}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &953606774
 CapsuleCollider2D:
@@ -1363,6 +1364,7 @@ MonoBehaviour:
   player: {fileID: 953606776}
   uiManager: {fileID: 646089629}
   floor: {fileID: 39226389}
+  cameraMovement: {fileID: 519420033}
 --- !u!4 &1142314978
 Transform:
   m_ObjectHideFlags: 0
@@ -1376,7 +1378,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1151686947
 GameObject:
@@ -1584,6 +1586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8173712368b1784e8ca955c1055fbff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 1142314977}
 --- !u!1 &1248506337
 GameObject:
   m_ObjectHideFlags: 0
