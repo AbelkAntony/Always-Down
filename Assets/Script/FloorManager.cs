@@ -19,7 +19,7 @@ public class FloorManager : MonoBehaviour
         //floors[numberOfFloors] = floor;
         //numberOfFloors++;
         floor.transform.position = new Vector3(0, y, 0);
-        y = y - 6;
+        y = y - 10;
         for (int i = 0; i < 10; i++)
         {
             floor = Instantiate(floorPrefab);
@@ -28,7 +28,7 @@ public class FloorManager : MonoBehaviour
             int x = Random.Range(-27, 27);
             floor.transform.position = new Vector3(x, y, 0);
             gameManager.NewFloorPosition(x, y);
-            y = y - 6;
+            y = y - 10;
         }
     }
 
@@ -37,7 +37,7 @@ public class FloorManager : MonoBehaviour
         int x = Random.Range(-27, 27);
         floor.transform.position = new Vector3(x, y, 0);
         gameManager.NewFloorPosition(x, y);
-        y = y - 6;
+        y = y - 10;
     }
 
     public void DestroyFloors()
