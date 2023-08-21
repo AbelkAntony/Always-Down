@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] PlayerMovement player;
     [SerializeField] UiManager uiManager;
     [SerializeField] FloorManager floor;
+    [SerializeField] CameraMovement cameraMovement;
     
     private int score;
 
@@ -16,6 +17,7 @@ public class GameManager : MonoBehaviour
     {
         uiManager.StartWindow();
         player.gameObject.SetActive(false);
+        cameraMovement.enabled = false;
     }
     public void NewFloorPosition(int x,int y)
     {
@@ -32,7 +34,7 @@ public class GameManager : MonoBehaviour
 
     public void NewGame()
     {
-        
+        cameraMovement.enabled = true;
         uiManager.NewGame();
         player.gameObject.SetActive(true);
         floor.CreateFloor();
