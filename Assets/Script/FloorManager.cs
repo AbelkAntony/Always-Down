@@ -7,9 +7,7 @@ public class FloorManager : MonoBehaviour
     [SerializeField] GameObject floorPrefab;
     private GameManager gameManager;
     private GameObject floor;
-    //private GameObject[] floors;
     private int y;
-   // private int numberOfFloors=0;
 
 
     public void CreateFloor()
@@ -17,15 +15,11 @@ public class FloorManager : MonoBehaviour
         y = 15;
         gameManager = FindObjectOfType<GameManager>();
         floor = Instantiate(floorPrefab);
-        //floors[numberOfFloors] = floor;
-        //numberOfFloors++;
         floor.transform.position = new Vector3(0, y, 0);
         y = y - 10;
         for (int i = 0; i < 10; i++)
         {
             floor = Instantiate(floorPrefab);
-            //floors[numberOfFloors] = floor;
-            //numberOfFloors++;
             int x = Random.Range(-27, 27);
             floor.transform.position = new Vector3(x, y, 0);
             gameManager.NewFloorPosition(x, y);
@@ -49,7 +43,6 @@ public class FloorManager : MonoBehaviour
         {
             Destroy(floors[i].gameObject);
         }
-        //numberOfFloors = 0;
     }
 
 
