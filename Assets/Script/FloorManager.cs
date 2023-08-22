@@ -8,12 +8,13 @@ public class FloorManager : MonoBehaviour
     private GameManager gameManager;
     private GameObject floor;
     //private GameObject[] floors;
-    private int y = 15;
+    private int y;
    // private int numberOfFloors=0;
 
 
     public void CreateFloor()
     {
+        y = 15;
         gameManager = FindObjectOfType<GameManager>();
         floor = Instantiate(floorPrefab);
         //floors[numberOfFloors] = floor;

@@ -17,4 +17,9 @@ public class CameraMovement : MonoBehaviour
             this.gameObject.transform.position += Vector3.down * movementSpeed* Time.deltaTime;
         
     }
+
+    private void OnEnable()
+    {
+        this.gameObject.transform.position = new Vector3(0, 40, -10);
+    }
 }

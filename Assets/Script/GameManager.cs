@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
         uiManager.GamOver();
         enemyManager.DestroyEnemies();
         floor.DestroyFloors();
-        
+        cameraMovement.enabled = false;
     }
   
 }
