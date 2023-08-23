@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] GameObject gunPoint;
     public Sprite[] sprites;
     private int spriteIndex;
+    private Vector3 floorPosition =new Vector3(0,12,0);
     private void Start()
     {
         gameManager = FindAnyObjectByType<GameManager>();
@@ -74,6 +75,7 @@ public class PlayerMovement : MonoBehaviour
     {
         playerHealth = 100;
         this.transform.position = new Vector3(-30, this.transform.position.y, this.transform.position.z);
+        floorPosition = new Vector3(0,12,0);
     }
 
     private void AnimateSprite()
@@ -86,6 +88,16 @@ public class PlayerMovement : MonoBehaviour
 
         spriteRenderer.sprite = sprites[spriteIndex];
     }
-
-    
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (floorPosition.y > collision.transform.position.y)
+        {
+            floorPosition = collision.gameObject.transform.position;
+            if (collision.gameObject.name == "Square" && floorPosition != Vector3.zero)
+            {
+                gameManager.AddScore(5);
+            }
+        }
+    }
+  
 }
