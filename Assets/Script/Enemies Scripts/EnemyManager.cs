@@ -29,7 +29,7 @@ public class EnemyManager : MonoBehaviour
 
     private void CreateEnemy()
     {
-        int enemyindex = Random.Range(4, 5);
+        int enemyindex = Random.Range(0, 5);
         switch(enemyindex)
         {
             case 0:
