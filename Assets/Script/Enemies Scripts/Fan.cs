@@ -22,11 +22,36 @@ public class Fan : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.name == "Player")
+        if(collision.name=="Player")
         {
             enemyManager.PlayerTakeDamage(damagePoint);
+        }
+        else if (collision.tag == "Bullet")
+        {
+            Debug.Log("bullet hit");
+            TakeDamage();
+        }
+        else if (collision.gameObject.tag == "Floor Spawner")
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    public void TakeDamage()
+    {
+        if (life <= 0)
+        {
+            Debug.Log("die");
+            enemyManager.AddScore(point);
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            Debug.Log(life);
+            life--;
         }
     }
 }
