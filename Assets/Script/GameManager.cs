@@ -58,4 +58,8 @@ public class GameManager : MonoBehaviour
         cameraMovement.enabled = false;
     }
   
+    public Vector3 GetPlayerPosition()
+    {
+        return player.gameObject.transform.position;
+    }
 }

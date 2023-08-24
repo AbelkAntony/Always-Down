@@ -94,4 +94,9 @@ public class EnemyManager : MonoBehaviour
         }
         
     }
+
+    public Vector3 GetPlayerPosition()
+    {
+        return gameManager.GetPlayerPosition();
+    }
 }
