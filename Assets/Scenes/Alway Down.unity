@@ -218,6 +218,7 @@ MonoBehaviour:
   - {fileID: 2281522879329993832, guid: cb321bc20c5e7fa4ab252b0dd0a4729b, type: 3}
   - {fileID: 5694094842728634496, guid: 7e56dc53c89fd2c4f90bf985c0dbfb75, type: 3}
   - {fileID: 5284539174188974309, guid: 29d36d88bdb0ab240b7f2ccae1743e58, type: 3}
+  - {fileID: 7405961522974329632, guid: 6cfb64b2f9870204fb7843bfab694c93, type: 3}
 --- !u!1 &248833568
 GameObject:
   m_ObjectHideFlags: 0
@@ -1188,11 +1189,6 @@ Transform:
   m_Father: {fileID: 953606773}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!1 &940442803 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7405961523464681953, guid: 6cfb64b2f9870204fb7843bfab694c93, type: 3}
-  m_PrefabInstance: {fileID: 7405961523331120466}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &953606771
 GameObject:
   m_ObjectHideFlags: 0
@@ -2116,14 +2112,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canon
       objectReference: {fileID: 0}
-    - target: {fileID: 7405961522974329633, guid: 6cfb64b2f9870204fb7843bfab694c93, type: 3}
-      propertyPath: gunPoint
-      value: 
-      objectReference: {fileID: 940442803}
-    - target: {fileID: 7405961522974329633, guid: 6cfb64b2f9870204fb7843bfab694c93, type: 3}
-      propertyPath: bulletPrefab
-      value: 
-      objectReference: {fileID: 1980251901539756505, guid: 8fb2f7a1ecc6d9a48afa20e7c5dad09c, type: 3}
     - target: {fileID: 7405961522974329638, guid: 6cfb64b2f9870204fb7843bfab694c93, type: 3}
       propertyPath: m_RootOrder
       value: 8
