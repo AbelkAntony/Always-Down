@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 7405961522974329633}
   m_Layer: 0
   m_Name: Canon
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -164,7 +164,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gun: {fileID: 7405961522196694121}
   enemyManager: {fileID: 0}
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 1980251901539756505, guid: 8fb2f7a1ecc6d9a48afa20e7c5dad09c, type: 3}
+  gunPoint: {fileID: 7405961523464681953}
 --- !u!1 &7405961523464681953
 GameObject:
   m_ObjectHideFlags: 0

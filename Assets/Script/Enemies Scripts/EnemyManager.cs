@@ -29,7 +29,7 @@ public class EnemyManager : MonoBehaviour
 
     private void CreateEnemy()
     {
-        int enemyindex = Random.Range(0, 5);
+        int enemyindex = Random.Range(5, 6);
         switch(enemyindex)
         {
             case 0:
@@ -49,6 +49,10 @@ public class EnemyManager : MonoBehaviour
             case 4:
                 xPosition = GetRandomPosition();
                 enemySpawnPosition = new Vector3(xPosition, YEnemyPosition, 0);
+                break;
+            case 5:
+                xPosition = GetRandomPosition();
+                enemySpawnPosition = new Vector3(xPosition, YEnemyPosition + 2, 0);
                 break;
         }
         enemy = Instantiate(enemyPrefab[enemyindex], enemySpawnPosition, Quaternion.identity);
