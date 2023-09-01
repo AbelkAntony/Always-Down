@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
         ResetState();
     }
 
-    public void takeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         if(playerHealth>damage)
         {
@@ -98,14 +98,13 @@ public class PlayerMovement : MonoBehaviour
                 gameManager.AddScore(5);
             }
         }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.tag=="Bullet")
+        if (collision.gameObject.tag == "Bullet")
         {
-            takeDamage(10);
+            Debug.Log("player get bullet");
+            gameManager.PlayerTakeDamage(10);
         }
     }
+
+ 
 
 }
