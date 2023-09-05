@@ -15,12 +15,9 @@ public class FloorRepositioning : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("trigger");
         if (collision.gameObject.tag == "Floor")
         {
             floorManager.RepositionFloor(collision.gameObject);
-            Debug.Log(collision);
-            Debug.Log("triggeer repposition");
         }
         else if (collision.gameObject.tag != "Player")
         {

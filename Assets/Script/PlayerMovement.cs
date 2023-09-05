@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private float bulletSpeed = 2500f;
     private Vector2 bulletDirection = Vector2.right;
     private bool haveGun = true;
-    private int playerHealth;
+    public int playerHealth;
     [SerializeField] GameObject bulletprefab;
     [SerializeField] GameObject gunPoint;
     public Sprite[] sprites;
@@ -98,7 +98,7 @@ public class PlayerMovement : MonoBehaviour
                 gameManager.AddScore(5);
             }
         }
-        if (collision.gameObject.tag == "Bullet")
+        else if (collision.gameObject.tag == "Bullet")
         {
             Debug.Log("player get bullet");
             gameManager.PlayerTakeDamage(10);
