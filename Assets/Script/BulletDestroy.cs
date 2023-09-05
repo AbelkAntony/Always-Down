@@ -17,7 +17,7 @@ public class BulletDestroy : MonoBehaviour
         //Debug.Log(collision.gameObject.name);
         if(collision.gameObject.name=="Player")
         {
-            Debug.Log(collision.gameObject.name);
+            //Debug.Log(collision.gameObject.name);
         }
     }
 }

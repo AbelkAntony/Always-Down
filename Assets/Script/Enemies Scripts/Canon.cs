@@ -39,7 +39,7 @@ public class Canon : MonoBehaviour
     {
         if (collision.tag == "Bullet")
         {
-            //Debug.Log("bullet hit");
+            Debug.Log("bullet hit");
             TakeDamage();
         }
         else if (collision.gameObject.tag == "Floor Spawner")
