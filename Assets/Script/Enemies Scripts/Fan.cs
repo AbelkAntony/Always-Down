@@ -31,7 +31,6 @@ public class Fan : MonoBehaviour
         }
         else if (collision.tag == "Bullet")
         {
-           // Debug.Log("bullet hit");
             TakeDamage();
         }
         else if (collision.gameObject.tag == "Floor Spawner")
@@ -44,13 +43,11 @@ public class Fan : MonoBehaviour
     {
         if (life <= 0)
         {
-            //Debug.Log("die");
             enemyManager.AddScore(point);
             Destroy(this.gameObject);
         }
         else
         {
-            //Debug.Log(life);
             life--;
         }
     }
