@@ -7,8 +7,6 @@ public class Fan : MonoBehaviour
 
     private EnemyManager enemyManager;
     private int damagePoint = 20;
-    private int life = 5;
-    private int point = 15;
     private void Start()
     {
         enemyManager = FindAnyObjectByType<EnemyManager>();
@@ -29,26 +27,11 @@ public class Fan : MonoBehaviour
         {
             enemyManager.PlayerTakeDamage(damagePoint);
         }
-        else if (collision.tag == "Bullet")
-        {
-            TakeDamage();
-        }
         else if (collision.gameObject.tag == "Floor Spawner")
         {
             Destroy(this.gameObject);
         }
     }
 
-    public void TakeDamage()
-    {
-        if (life <= 0)
-        {
-            enemyManager.AddScore(point);
-            Destroy(this.gameObject);
-        }
-        else
-        {
-            life--;
-        }
-    }
+   
 }

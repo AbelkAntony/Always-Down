@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private float bulletSpeed = 2500f;
     private Vector2 bulletDirection = Vector2.right;
     private bool haveGun = true;
-    public int playerHealth;
+    private int playerHealth;
     [SerializeField] GameObject bulletprefab;
     [SerializeField] GameObject gunPoint;
     public Sprite[] sprites;
