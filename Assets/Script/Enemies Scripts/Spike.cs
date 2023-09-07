@@ -6,10 +6,8 @@ public class Spike : MonoBehaviour
 {
     private EnemyManager enemyManager;
     private float fireTimeIntervel = 4;
-    public int life = 3;
     private int damagePoint = 10;
     private Vector3 enemyPosition;
-    private int point = 30;
 
     private void Start()
     {
@@ -35,12 +33,7 @@ public class Spike : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Bullet")
-        {
-            Destroy(collision.gameObject);
-            TakeDamage();
-        }
-        else if (collision.tag == "Player")
+        if (collision.tag == "Player")
         {
             enemyManager.PlayerTakeDamage(damagePoint);
         }
@@ -49,16 +42,5 @@ public class Spike : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-    public void TakeDamage()
-    {
-        if (life <= 0)
-        {
-            enemyManager.AddScore(point);
-            Destroy(gameObject);
-        }
-        else
-        {
-            life--;
-        }
-    }
+
 }
