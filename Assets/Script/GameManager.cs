@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
         uiManager.UpdatePlayerHelath(player.GetPlayerHealth());
         score = 0;
         uiManager.UpdateScore(score);
+        enemyManager.ResetState();
     }
     
     public void AddScore(int _score)

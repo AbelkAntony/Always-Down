@@ -11,6 +11,7 @@ public class EnemyManager : MonoBehaviour
     private int xPosition;
     private Vector3 enemySpawnPosition;
     private GameObject enemy;
+    private int numberOfEnemyToSpwan;
 
     private void Start()
     {
@@ -18,18 +19,22 @@ public class EnemyManager : MonoBehaviour
     }
     public void EnemySpawn(int x,int y)
     {
-        XEnemyPosition = x;
-        YEnemyPosition = y;
-        int randomNumber = Random.Range(0, 2);
-        if(randomNumber ==1)
+        for(int i =0; i< numberOfEnemyToSpwan;i++)
         {
-            CreateEnemy();
+            XEnemyPosition = x;
+            YEnemyPosition = y;
+            int randomNumber = Random.Range(0, 2);
+            if(randomNumber ==1)
+            {
+                CreateEnemy();
+            }
         }
+        numberOfEnemyToSpwan++;
     }
 
     private void CreateEnemy()
     {
-        int enemyindex = Random.Range(5, 6);
+        int enemyindex = Random.Range(0, 5);
         switch(enemyindex)
         {
             case 0:
@@ -97,6 +102,11 @@ public class EnemyManager : MonoBehaviour
             Destroy(enemies[i].gameObject);
         }
         
+    }
+
+    public void ResetState()
+    {
+        numberOfEnemyToSpwan = 1;
     }
 
     public Vector3 GetPlayerPosition()
