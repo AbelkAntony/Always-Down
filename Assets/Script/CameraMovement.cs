@@ -18,7 +18,7 @@ public class CameraMovement : MonoBehaviour
         
     }
 
-    private void OnEnable()
+    public void ResetState()
     {
         this.gameObject.transform.position = new Vector3(0, 40, -10);
     }

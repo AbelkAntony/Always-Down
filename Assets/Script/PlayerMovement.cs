@@ -74,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
     public void ResetState()
     {
         playerHealth = 100;
-        this.transform.position = new Vector3(-30, this.transform.position.y, this.transform.position.z);
+        this.transform.position = new Vector3(-30, 40f, this.transform.position.z);
         floorPosition = new Vector3(0,12,0);
     }
 

@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
     public void NewGame()
     {
         cameraMovement.enabled = true;
+        cameraMovement.ResetState();
         uiManager.NewGame();
         player.gameObject.SetActive(true);
         floor.CreateFloor();
