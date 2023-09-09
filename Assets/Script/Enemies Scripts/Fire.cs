@@ -13,7 +13,6 @@ public class Fire : MonoBehaviour
     private int damagePoint = 10;
     private bool died = false;
     private int spriteIndex;
-    private int point = 5;
     public Sprite[] sprites;
 
     private void Start()
@@ -49,11 +48,8 @@ public class Fire : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag=="Bullet")
-        {
-            TakeDamage();
-        }
-        else if(collision.tag=="Player")
+      
+        if(collision.tag=="Player")
         {
             enemyManager.PlayerTakeDamage(damagePoint);
         }
@@ -62,16 +58,7 @@ public class Fire : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-    public void TakeDamage()
-    {
-        life--;
-        if (life<=0)
-        {
-            enemyManager.AddScore(point);
-            CancelInvoke(nameof(FireStatus));
-            Destroy(gameObject);
-        }
-    }
+
 
     private void AnimateSprite()
     {
