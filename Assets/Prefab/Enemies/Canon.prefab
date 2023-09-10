@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7405961522094257837}
   - component: {fileID: 7405961522094256466}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 7405961522974329638}
   - component: {fileID: 7405961522974329633}
   - component: {fileID: 5075778380060547252}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Canon
   m_TagString: Enemy
   m_Icon: {fileID: 0}
