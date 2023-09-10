@@ -32,6 +32,7 @@ public class Canon : MonoBehaviour
     {
         Vector3 bulletDirection = enemyManager.GetPlayerPosition();
         GameObject bullet = Instantiate(bulletPrefab, gunPoint.transform.position, gunPoint.transform.rotation);
+        bullet.gameObject.layer = LayerMask.NameToLayer("CanonBullet");
         bullet.GetComponent<Rigidbody2D>().AddForce(targetDirection*bulletSpeed);
     }
 
