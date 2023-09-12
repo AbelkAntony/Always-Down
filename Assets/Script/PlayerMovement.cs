@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private float speed = 5f;
     private float jumpForce = 1500f;
-    private float bulletSpeed = 2500f;
+    private float bulletSpeed = 70f;
     private Vector2 bulletDirection = Vector2.right;
     private bool haveGun = true;
     private int playerHealth;
@@ -49,14 +49,14 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(Vector2.right * speed);
             this.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-            bulletDirection = Vector2.right;
+            bulletDirection = Vector3.right;
             AnimateSprite();
         }
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             rb.AddForce(Vector2.left * speed);
             this.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
-            bulletDirection = Vector2.left;
+            bulletDirection = Vector3.left;
             AnimateSprite();
         }
         if (Input.GetKeyDown(KeyCode.Space))
@@ -65,9 +65,10 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.LeftControl) && haveGun)
         {
-            GameObject bullet = Instantiate(bulletprefab, gunPoint.transform.position, gunPoint.transform.rotation);
-            bullet.GetComponent<Rigidbody2D>().AddForce(bulletDirection * bulletSpeed);
-
+            GameObject bullet = Instantiate(bulletprefab, gunPoint.transform.position,this.transform.rotation);
+            //bullet.GetComponent<Rigidbody2D>().AddForce(bulletDirection * bulletSpeed);
+            BulletManager bulletManager = bullet.GetComponent<BulletManager>();
+            bulletManager.BulletMovement(bulletDirection,bulletSpeed);
         }
 
     }
