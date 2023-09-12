@@ -33,7 +33,6 @@ public class Canon : MonoBehaviour
         Vector3 bulletDirection = enemyManager.GetPlayerPosition();
         GameObject bullet = Instantiate(bulletPrefab, gunPoint.transform.position, gunPoint.transform.rotation);
         bullet.gameObject.layer = LayerMask.NameToLayer("CanonBullet");
-        //bullet.GetComponent<Rigidbody2D>().AddForce(targetDirection*bulletSpeed);
         BulletManager bulletManager = bullet.GetComponent<BulletManager>();
         bulletManager.BulletMovement(targetDirection,this.bulletSpeed);
     }
@@ -55,13 +54,11 @@ public class Canon : MonoBehaviour
     {
         if (life <= 0)
         {
-           // Debug.Log("die");
             enemyManager.AddScore(point);
             Destroy(this.gameObject);
         }
         else
         {
-           // Debug.Log(life);
             life--;
         }
     }
