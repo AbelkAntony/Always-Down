@@ -10,7 +10,7 @@ public class Canon : MonoBehaviour
     [SerializeField] GameObject gunPoint;
     private Vector3 targetDirection;
     private float speed = 10f;
-    private float bulletSpeed = 100f;
+    private float bulletSpeed = 40f;
     private int point = 30;
     private int life = 3;
 
@@ -33,7 +33,9 @@ public class Canon : MonoBehaviour
         Vector3 bulletDirection = enemyManager.GetPlayerPosition();
         GameObject bullet = Instantiate(bulletPrefab, gunPoint.transform.position, gunPoint.transform.rotation);
         bullet.gameObject.layer = LayerMask.NameToLayer("CanonBullet");
-        bullet.GetComponent<Rigidbody2D>().AddForce(targetDirection*bulletSpeed);
+        //bullet.GetComponent<Rigidbody2D>().AddForce(targetDirection*bulletSpeed);
+        BulletManager bulletManager = bullet.GetComponent<BulletManager>();
+        bulletManager.BulletMovement(targetDirection, bulletSpeed);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
