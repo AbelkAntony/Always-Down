@@ -12,6 +12,7 @@ public class EnemyManager : MonoBehaviour
     private Vector3 enemySpawnPosition;
     private GameObject enemy;
     private int numberOfEnemyToSpwan;
+    private int rangeOfEnemyToSpwan;
 
     private void Start()
     {
@@ -19,6 +20,7 @@ public class EnemyManager : MonoBehaviour
     }
     public void EnemySpawn(int x,int y)
     {
+        numberOfEnemyToSpwan = Random.Range(1, rangeOfEnemyToSpwan);
         for(int i =0; i< numberOfEnemyToSpwan;i++)
         {
             XEnemyPosition = x;
@@ -29,7 +31,7 @@ public class EnemyManager : MonoBehaviour
                 CreateEnemy();
             }
         }
-        numberOfEnemyToSpwan++;
+        rangeOfEnemyToSpwan++;
     }
 
     private void CreateEnemy()
@@ -106,7 +108,7 @@ public class EnemyManager : MonoBehaviour
 
     public void ResetState()
     {
-        numberOfEnemyToSpwan = 1;
+        rangeOfEnemyToSpwan = 1;
     }
 
     public Vector3 GetPlayerPosition()
