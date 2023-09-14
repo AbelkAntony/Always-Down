@@ -31,13 +31,19 @@ public class PlayerMovement : MonoBehaviour
         if(playerHealth>damage)
         {
             playerHealth -= damage;
-            
+            spriteRenderer.color = Color.red;
+            Invoke(nameof(SpriteColour), .2f);
         }
         else if(playerHealth<=damage )
         {
             playerHealth = 0;
             gameManager.GameOver();
         }
+    }
+
+    private void SpriteColour()
+    {
+        spriteRenderer.color = Color.white;
     }
 
 
